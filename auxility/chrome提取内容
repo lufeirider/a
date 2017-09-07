@@ -32,6 +32,30 @@ function getIpByTag()
 }
 getIpByTag();
 
+#####################################################################################
+import requests
+
+urlList = [
+"http://www.baidu.com/link?url=M1SN1OPmF9xM43i4jwjeDVvn-uD-i7xOf1nDxZDdIh4iCQRPXnmJnpzEFaRpcLNbSzXJGnlGiRClt_kX_KjXo_",
+"http://www.baidu.com/link?url=9J00kAi9Fu07zxr4q4v_WZ2b0lW6WM-eIuzzcRtKQSS8Hd2u7hqAyBYyDOm1JbAwGgrUAubK8cR3V2_7RFJ1j_",
+"http://www.baidu.com/link?url=kJuAmhEDNtu9VT5tpF_Grdi5fv246Dyf6ESnWqyBrR9HZD8BniQXVqOEinUox_hn",
+"http://www.baidu.com/link?url=9Zlb9C0SnpP01To84341TBe2Tr1888CY8vkv86ZJAB94GoDO0II9m19lJpAKmSlm",
+"http://www.baidu.com/link?url=e-jNCpBOgKCFOAGakRSt7jsqeKM4Z7kAKxmzFXyizOybrMP3Ig5MVmIHd6cwgsug",
+"http://www.baidu.com/link?url=mhPGHLye4mCUdZOKGZz-RY_d7vzNThy_ifVZ8qGpAkvEGYUspJKT5wvHX0LSvPVd",
+"http://www.baidu.com/link?url=NOw1rL9Juxdl-_FYexMJq8n1I3vliWRPjMAVZT8YQ-S9nHOXn-EuI8YnIz6-8EXF",
+"http://www.baidu.com/link?url=3iCH4yJeE6UA_Pura3WMiNcoLBOYKePK0teNAwELb3667oy-RXOSuanprur6GjUN",
+"http://www.baidu.com/link?url=w_7v1e_uvw8YSQyZEA-SN1vnIIljpmknKaVLTtdZqxM8qLXi0C0LwLAUQJyrZYTY8aU4DjPnXtQeUQlP-zqzXK",
+"http://www.baidu.com/link?url=DjXRm8KwbnSAOaPtt3NtR7XzwCnWizbgJDxeC9DPB0GBeSJIiYb2ObZHQ5mLsYjP"
+]
+
+for someurl in urlList:
+	response = requests.get(someurl)
+	if response.history:
+		print(response.url)
+	else:
+		print("Request was not redirected")
+
+##################################################################################################
 
 Google
 console.log(document.getElementsByClassName("r")[0.].firstChild.href)
