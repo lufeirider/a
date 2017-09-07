@@ -1,0 +1,13 @@
+function getIpByTag()
+{
+	var ip = document.getElementsByClassName("ip");
+	var str = "\n";
+	
+	for(var i=0;i< ip.length;i++)
+	{
+		var node = ip[i].firstChild;
+		str = str +node.innerHTML + "\n";
+	}
+	return str;
+}
+getIpByTag();
