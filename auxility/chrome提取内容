@@ -26,7 +26,8 @@ function getIpByTag()
 	{
 		str = str + '"' + t[i].getElementsByTagName('a')[0].href + '",\n';
 	}
-	
+	str = str.substring(0,str.length-2)
+	str = str + '\n'
 	return str;
 }
 getIpByTag();
@@ -39,29 +40,11 @@ function getIpByTag()
 	var r = document.getElementsByClassName("r");
 	var str = '\n';
 	
-	for(var i=0;i< t.length;i++)
+	for(var i=0;i< r.length;i++)
 	{
-		str = str + '"' + r[i].firstChild.href + '",\n';
+		str = str + r[i].firstChild.href + '\n';
 	}
 	
 	return str;
 }
 getIpByTag();
-
-//方法2：正则提取
-var tag = document.getElementsByClassName("span9")[0];
-var re = new RegExp();
-var str = tag.innerHTML; 
-var re = /\d+\.\d+\.\d+\.\d+/g;
-var arr = str.match(re);
-console.log(arr);
-//数组去重
-arr.sort();
-for(var i = 0; i < arr.length-1;) {
-    //用当前的元素与他的前一个元素进行对比
-    if(arr[i] == arr[i + 1]) {
-        //如果相同的话,就删除掉第i个元素
-        arr.splice(i, 1);
-    }else{ i++;}
-}
-console.log(arr);
