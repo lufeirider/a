@@ -1,13 +1,49 @@
+Shadan
+console.log(document.getElementsByClassName("ip")[0].firstChild.innerHTML)
 function getIpByTag()
 {
 	var ip = document.getElementsByClassName("ip");
 	var str = "\n";
 	
-	for(var i=0;i< ip.length;i++)
+	for(var i=0; i < ip.length; i++)
 	{
 		var node = ip[i].firstChild;
-		str = str +node.innerHTML + "\n";
+		str = str + node.innerHTML + "\n";
 	}
+	return str;
+}
+getIpByTag();
+
+
+Baidu
+console.log(document.getElementsByClassName("t")[0].getElementsByTagName('a')[0].href)
+function getIpByTag()
+{
+	var t = document.getElementsByClassName("t");
+	var str = '\n';
+	
+	for(var i=0;i< t.length;i++)
+	{
+		str = str + '"' + t[i].getElementsByTagName('a')[0].href + '",\n';
+	}
+	
+	return str;
+}
+getIpByTag();
+
+
+Google
+console.log(document.getElementsByClassName("r")[0.].firstChild.href)
+function getIpByTag()
+{
+	var r = document.getElementsByClassName("r");
+	var str = '\n';
+	
+	for(var i=0;i< t.length;i++)
+	{
+		str = str + '"' + r[i].firstChild.href + '",\n';
+	}
+	
 	return str;
 }
 getIpByTag();
