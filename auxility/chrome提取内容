@@ -1,3 +1,18 @@
+function getRecordByTag()
+{
+	var t = document.getElementsByClassName("datelist")[0].getElementsByTagName('tr');
+	var str = '\n';
+	
+	for(var i=0;i< t.length;i++)
+	{
+		str = str + t[i].getElementsByTagName('td')[6].innerHTML + '+';
+	}
+	str = str.substring(0,str.length-1)
+	str = str + '\n'
+	return str;
+}
+getRecordByTag();
+
 Shadan
 console.log(document.getElementsByClassName("ip")[0].firstChild.innerHTML)
 function getIpByTag()
